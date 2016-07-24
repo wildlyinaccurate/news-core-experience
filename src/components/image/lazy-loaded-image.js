@@ -7,7 +7,7 @@ class LazyLoadedImage extends React.Component {
     return (
       <img
         src={src}
-        data-src={this.props.rawSrc}
+        data-src={this.props.interpolatedSrc}
         data-widths={JSON.stringify(this.props.chefSizes)}
         data-sizes="auto"
         alt={this.props.alt}
@@ -20,9 +20,8 @@ class LazyLoadedImage extends React.Component {
 LazyLoadedImage.propTypes = {
   alt: React.PropTypes.string.isRequired,
   chefSizes: React.PropTypes.array.isRequired,
-  delayed: React.PropTypes.bool.isRequired,
-  sizes: React.PropTypes.string.isRequired,
-  rawSrc: React.PropTypes.string.isRequired
+  interpolatedSrc: React.PropTypes.string.isRequired,
+  sizes: React.PropTypes.string.isRequired
 }
 
 LazyLoadedImage.defaultProps = {

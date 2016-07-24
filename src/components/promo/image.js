@@ -3,7 +3,7 @@ const React = require('react')
 const SrcsetImage = require('../image/srcset-image')
 const LazyLoadedImage = require('../image/lazy-loaded-image')
 
-const ICHEF_SIZES = [240, 320, 480, 624, 800]
+const CHEF_SIZES = [240, 320, 480, 624, 800]
 
 class PromoImage extends React.Component {
   transformImageSrc (src) {
@@ -15,18 +15,16 @@ class PromoImage extends React.Component {
   }
 
   render () {
-    const ichefRecipe = this.transformImageSrc(this.props.href)
+    const chefRecipe = this.transformImageSrc(this.props.href)
 
     const Image = this.props.delayed ? LazyLoadedImage : SrcsetImage
     const imageProps = {
       alt: this.props.alt,
-      chefSizes: ICHEF_SIZES,
+      chefSizes: CHEF_SIZES,
       interpolate: this.interpolateImageWidth,
-      interpolatedSrc: this.interpolateImageWidth(ichefRecipe, this.props.width),
-      rawSrc: ichefRecipe,
-      sizes: '(min-width: 230px) 100vw, 100vw',
-      src: ichefRecipe,
-      width: this.props.width
+      interpolatedSrc: this.interpolateImageWidth(chefRecipe, this.props.width),
+      chefRecipe: chefRecipe,
+      sizes: '(min-width: 230px) 100vw, 100vw'
     }
 
     return (
