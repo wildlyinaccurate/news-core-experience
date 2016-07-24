@@ -4,6 +4,10 @@
   overflow: hidden;
   padding-bottom: 56.25%; // 16:9 ratio
 
+  &--ll {
+    padding-bottom: 0;
+  }
+
   img {
     width: 100%;
   }

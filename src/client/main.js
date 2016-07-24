@@ -19,6 +19,10 @@
   }
 
   onClick($('load-images'), function () {
+    $qsa('.c-img--ll').forEach(function (element) {
+      element.className = 'c-img'
+    })
+
     var s = document.createElement('script')
     s.src = 'https://m.files.bbci.co.uk/modules/bbc-morph-lazysizes/0.2.1/bundle.js'
     s.onload = function () {

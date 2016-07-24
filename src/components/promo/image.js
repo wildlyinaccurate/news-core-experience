@@ -18,6 +18,7 @@ class PromoImage extends React.Component {
     const chefRecipe = this.transformImageSrc(this.props.href)
 
     const Image = this.props.delayed ? LazyLoadedImage : SrcsetImage
+    const imageClasses = ['c-img']
     const imageProps = {
       alt: this.props.alt,
       chefSizes: CHEF_SIZES,
@@ -27,8 +28,12 @@ class PromoImage extends React.Component {
       sizes: '(min-width: 230px) 100vw, 100vw'
     }
 
+    if (this.props.delayed) {
+      imageClasses.push('c-img--ll')
+    }
+
     return (
-      <div className="c-img">
+      <div className={imageClasses.join(' ')}>
         <Image {...imageProps} />
       </div>
     )
