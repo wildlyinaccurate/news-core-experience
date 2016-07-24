@@ -21,7 +21,6 @@ class PromoImage extends React.Component {
     const imageProps = {
       alt: this.props.alt,
       chefSizes: ICHEF_SIZES,
-      className: 'img-fluid',
       interpolate: this.interpolateImageWidth,
       interpolatedSrc: this.interpolateImageWidth(ichefRecipe, this.props.width),
       rawSrc: ichefRecipe,
@@ -31,7 +30,7 @@ class PromoImage extends React.Component {
     }
 
     return (
-      <div className="responsive-image">
+      <div className="c-img">
         <Image {...imageProps} />
       </div>
     )

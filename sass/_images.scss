@@ -1,11 +1,10 @@
-.responsive-image {
+.c-img {
   background: $grey-bg url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAAjAQMAAACO1OemAAAABlBMVEUAAAC8vLzjhKCoAAAAAXRSTlMAQObYZgAAAKlJREFUKM+10bENAyEMBVBHFJSMwChsFpLNLroBMkLIBpQUCMffUXBOlzJH4eIJ4Y9NLKdFVIdS/gOLF2gEkAo4KSSBhSKAMiAKXL4hsBuksNYkcPbsuh8KDZABgR+A/oGWmDc36g7yG2rGo2GC5ajM26RFwYIZJICfsLaILs5gBMDN2vJveO5g/sXeaJHvgK5w1XkEzYG25HRiBgjGAItuU7c1VOJyyPZfTGiDhgw1wfcAAAAASUVORK5CYII=") no-repeat center;
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%; // 16:9 ratio
-}
 
-.img-fluid {
-  @include img-fluid();
-  width: 100%;
+  & img {
+    width: 100%;
+  }
 }

@@ -18,7 +18,7 @@ class Index extends React.Component {
         <Header />
         <Utils />
 
-        <div className="container-fluid">
+        <div className="c-wrap">
           <SevenSlice items={groups.topStories.slice(0, 7)} />
           <FiveSlice items={groups.topStories.slice(7)} />
 

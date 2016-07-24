@@ -9,11 +9,6 @@ class SrcsetImage extends React.Component {
 
   render () {
     const srcset = this.getSrcSet(this.props.rawSrc, this.props.chefSizes, this.props.interpolate)
-    const classNames = ['qa-srcset-image']
-
-    if (this.props.className) {
-      classNames.push(this.props.className)
-    }
 
     return (
       <img
@@ -21,7 +16,7 @@ class SrcsetImage extends React.Component {
         sizes={this.props.sizes}
         srcSet={srcset}
         alt={this.props.alt}
-        className={classNames.join(' ')}
+        className="qa-srcset-image"
       />
     )
   }
@@ -30,7 +25,6 @@ class SrcsetImage extends React.Component {
 SrcsetImage.propTypes = {
   alt: React.PropTypes.string.isRequired,
   chefSizes: React.PropTypes.array.isRequired,
-  className: React.PropTypes.string.isRequired,
   delayed: React.PropTypes.bool.isRequired,
   sizes: React.PropTypes.string.isRequired,
   rawSrc: React.PropTypes.string.isRequired
