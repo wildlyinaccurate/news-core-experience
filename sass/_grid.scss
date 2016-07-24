@@ -21,38 +21,38 @@ $grid-breakpoints: (
 }
 
 [class *= col-] {
-  @include make-col();
+  @include make-col-ready("THIS PARAM ISN'T USED C'MON BOOTSTRAP");
   display: flex;
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     .col-#{$breakpoint}-1 {
-      @include make-col-span(1, 1);
+      @include make-col(1, 1);
     }
 
     .col-#{$breakpoint}-1\/2 {
-      @include make-col-span(1, 2);
+      @include make-col(1, 2);
     }
 
     .col-#{$breakpoint}-1\/3 {
-      @include make-col-span(1, 3);
+      @include make-col(1, 3);
     }
 
     .col-#{$breakpoint}-1\/4 {
-      @include make-col-span(1, 4);
+      @include make-col(1, 4);
     }
 
     .col-#{$breakpoint}-1\/5 {
-      @include make-col-span(1, 5);
+      @include make-col(1, 5);
     }
 
     .col-#{$breakpoint}-2\/5 {
-      @include make-col-span(2, 5);
+      @include make-col(2, 5);
     }
 
     .col-#{$breakpoint}-3\/5 {
-      @include make-col-span(3, 5);
+      @include make-col(3, 5);
     }
   }
 }
