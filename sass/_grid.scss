@@ -1,0 +1,59 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 400px,
+  md: 600px,
+  lg: 900px,
+  xl: 1280px
+);
+
+.container-fluid {
+  @include make-container();
+  max-width: 1280px;
+}
+
+.row {
+  @include make-row($grid-gutter-width * 2);
+}
+
+@include media-breakpoint-up(md) {
+  .row {
+    @include make-row();
+  }
+}
+
+[class *= col-] {
+  @include make-col();
+  display: flex;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .col-#{$breakpoint}-1 {
+      @include make-col-span(1, 1);
+    }
+
+    .col-#{$breakpoint}-1\/2 {
+      @include make-col-span(1, 2);
+    }
+
+    .col-#{$breakpoint}-1\/3 {
+      @include make-col-span(1, 3);
+    }
+
+    .col-#{$breakpoint}-1\/4 {
+      @include make-col-span(1, 4);
+    }
+
+    .col-#{$breakpoint}-1\/5 {
+      @include make-col-span(1, 5);
+    }
+
+    .col-#{$breakpoint}-2\/5 {
+      @include make-col-span(2, 5);
+    }
+
+    .col-#{$breakpoint}-3\/5 {
+      @include make-col-span(3, 5);
+    }
+  }
+}

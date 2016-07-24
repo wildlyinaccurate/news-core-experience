@@ -1,0 +1,14 @@
+.c-promo__metadata-item {
+  border-left: 1px solid #5a5a5a;
+  font-size: 0.93rem;
+  padding: 0 0.5rem;
+}
+
+.c-promo__metadata-item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.c-promo__section {
+  color: $brand-secondary;
+}

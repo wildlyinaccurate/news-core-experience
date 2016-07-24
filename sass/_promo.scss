@@ -1,0 +1,33 @@
+.c-promo {
+  padding-bottom: 1.5rem;
+}
+
+.c-promo--offline {
+  &:before {
+    color: #fff;
+    content: '✔';
+    left: 1.5rem;
+    position: absolute;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    top: 0.75rem;
+  }
+
+  &:hover:before {
+    content: '✔ Available offline';
+  }
+}
+
+.c-promo,
+.c-promo__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.c-promo__body {
+  justify-content: space-between;
+}
+
+.c-promo__icon {
+  padding-right: 0.25rem;
+}

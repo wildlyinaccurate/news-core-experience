@@ -1,0 +1,20 @@
+.c-slice-heading {
+  margin: 1rem 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    right: 0;
+    bottom: 12px;
+    height: 1px;
+    background: #2a2a2a;
+  }
+}
+
+.c-slice-heading__link {
+  background: #fff;
+  padding-right: 1rem;
+  position: relative;
+}

@@ -1,0 +1,18 @@
+.c-header {
+  background: $brand-primary;
+  padding: 1rem;
+}
+
+.c-header__title {
+  font-weight: normal;
+  margin: 0;
+}
+
+.c-header,
+.c-header__title-link {
+  color: #fff;
+}
+
+.c-header__byline {
+  padding-left: 0.5rem;
+}

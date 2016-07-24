@@ -1,0 +1,41 @@
+// Bootstrap overrides
+$enable-flex: true;
+$enable-grid-classes: false; // We gon' make our own grid
+
+// News variables
+$font-family-base: sans-serif;
+$font-size-root: 14px;
+$body-color: #222;
+$link-color: $body-color;
+$link-hover-color: #0e7698;
+$line-height: 1.25;
+$brand-primary: #bb1919;
+$brand-secondary: #a61b1b;
+$grey-bg: #f0f0f0;
+
+// Core variables and mixins
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+// Resets
+@import 'normalize';
+
+// Special sauce framework
+@import 'reboot';
+@import 'grid';
+@import 'images';
+
+// Loner utility class
+.a-i-b {
+  align-items: baseline;
+}
+
+// News components
+@import 'header';
+@import 'slice';
+@import 'promo';
+@import 'promo-metadata';
+@import 'timestamp';
+
+// Extra UI
+@import 'utils';
