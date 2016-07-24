@@ -6,7 +6,7 @@ const PromoMetadata = require('./metadata')
 class Promo extends React.Component {
   renderImage () {
     if (this.props.includeImage) {
-      return <PromoImage {...this.props.image} delayed={this.props.delayedImage} />
+      return <PromoImage {...this.props.image} width="400" delayed={this.props.delayedImage} />
     }
 
     return null
