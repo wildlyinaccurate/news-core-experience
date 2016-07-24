@@ -11,7 +11,7 @@ class LazyLoadedImage extends React.Component {
         data-widths={JSON.stringify(this.props.chefSizes)}
         data-sizes="auto"
         alt={this.props.alt}
-        className="qa-lazyload-image lazyload lazyautosizes"
+        className="lazyload lazyautosizes"
       />
     )
   }

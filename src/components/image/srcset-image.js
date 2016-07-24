@@ -16,7 +16,6 @@ class SrcsetImage extends React.Component {
         sizes={this.props.sizes}
         srcSet={srcset}
         alt={this.props.alt}
-        className="qa-srcset-image"
       />
     )
   }
