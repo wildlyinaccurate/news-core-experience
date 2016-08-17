@@ -1,17 +1,14 @@
-
 {
   "name": "news-core-experience",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An attempt at building a super-lightweight core experience for BBC News",
   "main": "lib/index.js",
   "scripts": {
     "build-app": "npm run build && node build-app.js",
-
     "build": "npm run babel && npm run uglify && npm run sass",
     "babel": "babel src -d lib",
     "uglify": "uglifyjs lib/client/main.js --compress --mangle --output lib/client/main.js",
     "sass": "node-sass --output-style compressed -o public sass",
-
     "test": "npm run eslint",
     "eslint": "eslint src/**/*.js"
   },
