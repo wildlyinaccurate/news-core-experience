@@ -9,7 +9,7 @@ class Header extends React.Component {
             <div className="col-s-1 a-i-b">
               <h1 className="c-header__title">
                 <a className="c-header__title-link" href="/news">
-                  NEWS
+                  THE NEWS
                 </a>
               </h1>
 
