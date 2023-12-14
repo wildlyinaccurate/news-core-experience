@@ -1,8 +1,9 @@
-const React = require('react')
-const Promo = require('./promo')
+const React = require("react");
+const PropTypes = require("prop-types");
+const Promo = require("./promo");
 
 class ThreeSlice extends React.Component {
-  render () {
+  render() {
     return (
       <div className="row c-slice">
         <div className="col-s-1 col-m-1/3">
@@ -17,12 +18,12 @@ class ThreeSlice extends React.Component {
           <Promo {...this.props.items[2]} includeSummary={true} />
         </div>
       </div>
-    )
+    );
   }
 }
 
 ThreeSlice.propTypes = {
-  items: React.PropTypes.array.isRequired
-}
+  items: PropTypes.array.isRequired,
+};
 
-module.exports = ThreeSlice
+module.exports = ThreeSlice;

@@ -1,26 +1,33 @@
-const React = require('react')
-const PromoIcon = require('./icon')
-const PromoImage = require('./image')
-const PromoMetadata = require('./metadata')
+const React = require("react");
+const PropTypes = require("prop-types");
+const PromoIcon = require("./icon");
+const PromoImage = require("./image");
+const PromoMetadata = require("./metadata");
 
 class Promo extends React.Component {
-  renderImage () {
+  renderImage() {
     if (this.props.includeImage) {
-      return <PromoImage {...this.props.image} width={400} delayed={this.props.delayedImage} />
+      return (
+        <PromoImage
+          {...this.props.image}
+          width={400}
+          delayed={this.props.delayedImage}
+        />
+      );
     }
 
-    return null
+    return null;
   }
 
-  renderSummary () {
+  renderSummary() {
     if (this.props.includeSummary) {
-      return <p>{this.props.summary}</p>
+      return <p>{this.props.summary}</p>;
     }
 
-    return null
+    return null;
   }
 
-  render () {
+  render() {
     return (
       <article className="c-promo">
         {this.renderImage()}
@@ -40,33 +47,33 @@ class Promo extends React.Component {
           <PromoMetadata {...this.props} />
         </div>
       </article>
-    )
+    );
   }
 }
 
 Promo.propTypes = {
-  image: React.PropTypes.object.isRequired,
-  lastUpdated: React.PropTypes.string.isRequired,
-  section: React.PropTypes.object.isRequired,
-  summary: React.PropTypes.string.isRequired,
-  title: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string.isRequired,
-  url: React.PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  lastUpdated: PropTypes.string.isRequired,
+  section: PropTypes.object.isRequired,
+  summary: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 
-  delayedImage: React.PropTypes.bool,
-  promoClasses: React.PropTypes.string,
+  delayedImage: PropTypes.bool,
+  promoClasses: PropTypes.string,
 
-  includeImage: React.PropTypes.bool,
-  includeSummary: React.PropTypes.bool,
-  includeSection: React.PropTypes.bool,
-  includeTimestamp: React.PropTypes.bool
-}
+  includeImage: PropTypes.bool,
+  includeSummary: PropTypes.bool,
+  includeSection: PropTypes.bool,
+  includeTimestamp: PropTypes.bool,
+};
 
 Promo.defaultProps = {
   delayedImage: true,
   includeImage: true,
   includeSummary: false,
-  promoClasses: ''
-}
+  promoClasses: "",
+};
 
-module.exports = Promo
+module.exports = Promo;

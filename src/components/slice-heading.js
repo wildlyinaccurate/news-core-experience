@@ -1,19 +1,21 @@
-const React = require('react')
+const React = require("react");
+const PropTypes = require("prop-types");
 
 class SliceHeading extends React.Component {
-
-  render () {
+  render() {
     return (
       <h2 className="c-slice-heading">
-        <a className="c-slice-heading__link" href={this.props.url}>{this.props.text}</a>
+        <a className="c-slice-heading__link" href={this.props.url}>
+          {this.props.text}
+        </a>
       </h2>
-    )
+    );
   }
 }
 
 SliceHeading.propTypes = {
-  text: React.PropTypes.string.isRequired,
-  url: React.PropTypes.string
-}
+  text: PropTypes.string.isRequired,
+  url: PropTypes.string,
+};
 
-module.exports = SliceHeading
+module.exports = SliceHeading;

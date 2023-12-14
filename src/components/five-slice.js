@@ -1,8 +1,9 @@
-const React = require('react')
-const Promo = require('./promo')
+const React = require("react");
+const PropTypes = require("prop-types");
+const Promo = require("./promo");
 
 class FiveSlice extends React.Component {
-  render () {
+  render() {
     return (
       <div className="row c-slice">
         <div className="col-s-1 col-m-1/3 col-l-1/4">
@@ -20,21 +21,31 @@ class FiveSlice extends React.Component {
         <div className="col-l-1/4">
           <div className="row">
             <div className="col-s-1/2 col-l-1">
-                <Promo {...this.props.items[3]} includeImage={false} includeTimestamp={false} includeSection={false} />
+              <Promo
+                {...this.props.items[3]}
+                includeImage={false}
+                includeTimestamp={false}
+                includeSection={false}
+              />
             </div>
 
             <div className="col-s-1/2 col-l-1">
-                <Promo {...this.props.items[4]} includeImage={false} includeTimestamp={false} includeSection={false} />
+              <Promo
+                {...this.props.items[4]}
+                includeImage={false}
+                includeTimestamp={false}
+                includeSection={false}
+              />
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 FiveSlice.propTypes = {
-  items: React.PropTypes.array.isRequired
-}
+  items: PropTypes.array.isRequired,
+};
 
-module.exports = FiveSlice
+module.exports = FiveSlice;

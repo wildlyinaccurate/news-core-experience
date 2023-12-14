@@ -1,53 +1,54 @@
 (function () {
-  'use strict'
+  "use strict";
 
-  var M = window.Morph = {
+  const M = (window.Morph = {
     versions: {},
-    modules: {}
+    modules: {},
+  });
+
+  const $ = document.getElementById.bind(document);
+
+  function $qsa(selector) {
+    return Array.prototype.slice.call(document.querySelectorAll(selector));
   }
 
-  var $ = document.getElementById.bind(document)
-
-  function $qsa (selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector))
-  }
-
-  function onClick (element, cb) {
+  function onClick(element, cb) {
     if (element) {
-      element.addEventListener('click', cb)
+      element.addEventListener("click", cb);
     }
   }
 
-  onClick($('load-images'), function () {
-    $qsa('.c-img--ll').forEach(function (element) {
-      element.className = 'c-img'
-    })
+  onClick($("load-images"), function () {
+    $qsa(".c-img--ll").forEach(function (element) {
+      element.className = "c-img";
+    });
 
-    var s = document.createElement('script')
-    s.src = 'https://m.files.bbci.co.uk/modules/bbc-morph-lazysizes/0.2.1/bundle.js'
+    const s = document.createElement("script");
+    s.src =
+      "https://m.files.bbci.co.uk/modules/bbc-morph-lazysizes/0.2.1/bundle.js";
     s.onload = function () {
-      M.modules['bbc-morph-lazysizes@0.2.1'].load()
-    }
+      M.modules["bbc-morph-lazysizes@0.2.1"].load();
+    };
 
-    document.body.appendChild(s)
-  })
+    document.body.appendChild(s);
+  });
 
-  onClick($('load-video'), function () {
-    $('full-video').style.display = 'block'
+  onClick($("load-video"), function () {
+    $("full-video").style.display = "block";
 
-    $qsa('.c-video-frame').forEach(function (element) {
-      element.style.display = 'none'
-    })
-  })
+    $qsa(".c-video-frame").forEach(function (element) {
+      element.style.display = "none";
+    });
+  });
 
-  onClick($('download-top'), download($qsa('.c-promo').slice(0, 7)))
-  onClick($('download-all'), download($qsa('.c-promo')))
+  onClick($("download-top"), download($qsa(".c-promo").slice(0, 7)));
+  onClick($("download-all"), download($qsa(".c-promo")));
 
-  function download (stories) {
+  function download(stories) {
     return function () {
       stories.forEach(function (element) {
-        element.className += ' c-promo--offline'
-      })
-    }
+        element.className += " c-promo--offline";
+      });
+    };
   }
-})()
+})();

@@ -1,12 +1,13 @@
-const React = require('react')
-const moment = require('moment')
+const React = require("react");
+const PropTypes = require("prop-types");
+const moment = require("moment");
 
 class Timestamp extends React.Component {
-  date () {
-    return moment(this.props.time).format('D MMM YYYY')
+  date() {
+    return moment(this.props.time).format("D MMM YYYY");
   }
 
-  render () {
+  render() {
     return (
       <span className="c-timestamp">
         🕓
@@ -14,12 +15,12 @@ class Timestamp extends React.Component {
           {this.date()}
         </time>
       </span>
-    )
+    );
   }
 }
 
 Timestamp.propTypes = {
-  time: React.PropTypes.string.isRequired
-}
+  time: PropTypes.string.isRequired,
+};
 
-module.exports = Timestamp
+module.exports = Timestamp;

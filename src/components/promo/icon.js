@@ -1,33 +1,37 @@
-const React = require('react')
+const React = require("react");
+const PropTypes = require("prop-types");
 
-const MEDIA_TYPE_AUDIO = 'Audio'
+const MEDIA_TYPE_AUDIO = "Audio";
 
 class PromoIcon extends React.Component {
-  getIcon () {
+  getIcon() {
     switch (this.props.type) {
-      case 'PGL': return '📷 '
+      case "PGL":
+        return "📷 ";
 
-      case 'MAP':
+      case "MAP":
         if (this.props.mediaType === MEDIA_TYPE_AUDIO) {
-          return '🔊'
+          return "🔊";
         }
 
-        return '▶'
+        return "▶";
     }
 
-    return null
+    return null;
   }
 
-  render () {
-    const icon = this.getIcon()
+  render() {
+    const icon = this.getIcon();
 
-    return icon ? <span className="c-promo__icon">{this.getIcon()}</span> : null
+    return icon ? (
+      <span className="c-promo__icon">{this.getIcon()}</span>
+    ) : null;
   }
 }
 
 PromoIcon.propTypes = {
-  type: React.PropTypes.string.isRequired,
-  mediaType: React.PropTypes.string.isRequired
-}
+  type: PropTypes.string.isRequired,
+  mediaType: PropTypes.string.isRequired,
+};
 
-module.exports = PromoIcon
+module.exports = PromoIcon;

@@ -8,9 +8,9 @@
     "build": "npm run babel && npm run uglify && npm run sass",
     "babel": "babel src -d lib",
     "uglify": "uglifyjs lib/client/main.js --compress --mangle --output lib/client/main.js",
-    "sass": "node-sass --output-style compressed -o public sass",
-    "test": "npm run eslint",
-    "eslint": "eslint src/**/*.js"
+    "sass": "sass --style compressed sass:public",
+    "test": "npm run lint",
+    "lint": "eslint --fix src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,18 +26,22 @@
     "babel-cli": "^6.11.4",
     "babel-preset-react": "^6.11.1",
     "bootstrap": "github:twbs/bootstrap#v4.0.0-alpha.3",
-    "eslint": "^3.1.1",
-    "eslint-config-standard": "^5.3.5",
-    "eslint-plugin-promise": "^2.0.0",
-    "eslint-plugin-react": "^6.1.1",
-    "eslint-plugin-standard": "^2.0.0",
-    "node-sass": "^3.8.0",
-    "uglify-js": "^2.7.0"
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-standard": "^5.0.0",
+    "prettier": "^3.1.1",
+    "sass": "^1.69.5",
+    "uglify-js": "^3.17.4"
   },
   "dependencies": {
     "moment": "^2.14.1",
-    "ramda": "^0.22.0",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "prop-types": "^15.8.1",
+    "ramda": "^0.29.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

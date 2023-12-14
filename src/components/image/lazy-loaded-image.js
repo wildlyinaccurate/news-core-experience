@@ -1,8 +1,10 @@
-const React = require('react')
+const React = require("react");
+const PropTypes = require("prop-types");
 
 class LazyLoadedImage extends React.Component {
-  render () {
-    const src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+  render() {
+    const src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
     return (
       <img
@@ -13,19 +15,19 @@ class LazyLoadedImage extends React.Component {
         alt={this.props.alt}
         className="lazyload lazyautosizes"
       />
-    )
+    );
   }
 }
 
 LazyLoadedImage.propTypes = {
-  alt: React.PropTypes.string.isRequired,
-  chefSizes: React.PropTypes.array.isRequired,
-  interpolatedSrc: React.PropTypes.string.isRequired,
-  sizes: React.PropTypes.string.isRequired
-}
+  alt: PropTypes.string.isRequired,
+  chefSizes: PropTypes.array.isRequired,
+  interpolatedSrc: PropTypes.string.isRequired,
+  sizes: PropTypes.string.isRequired,
+};
 
 LazyLoadedImage.defaultProps = {
-  alt: ''
-}
+  alt: "",
+};
 
-module.exports = LazyLoadedImage
+module.exports = LazyLoadedImage;

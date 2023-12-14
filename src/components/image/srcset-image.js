@@ -1,14 +1,19 @@
-const React = require('react')
+const React = require("react");
+const PropTypes = require("prop-types");
 
 class SrcsetImage extends React.Component {
-  getSrcSet (recipe, chefSizes, interpolate) {
+  getSrcSet(recipe, chefSizes, interpolate) {
     return chefSizes
-      .map(size => `${interpolate(recipe, size)} ${size}w`)
-      .join(', ')
+      .map((size) => `${interpolate(recipe, size)} ${size}w`)
+      .join(", ");
   }
 
-  render () {
-    const srcset = this.getSrcSet(this.props.chefRecipe, this.props.chefSizes, this.props.interpolate)
+  render() {
+    const srcset = this.getSrcSet(
+      this.props.chefRecipe,
+      this.props.chefSizes,
+      this.props.interpolate
+    );
 
     return (
       <img
@@ -17,20 +22,20 @@ class SrcsetImage extends React.Component {
         srcSet={srcset}
         alt={this.props.alt}
       />
-    )
+    );
   }
 }
 
 SrcsetImage.propTypes = {
-  alt: React.PropTypes.string.isRequired,
-  chefRecipe: React.PropTypes.string.isRequired,
-  chefSizes: React.PropTypes.array.isRequired,
-  interpolatedSrc: React.PropTypes.string.isRequired,
-  sizes: React.PropTypes.string.isRequired
-}
+  alt: PropTypes.string.isRequired,
+  chefRecipe: PropTypes.string.isRequired,
+  chefSizes: PropTypes.array.isRequired,
+  interpolatedSrc: PropTypes.string.isRequired,
+  sizes: PropTypes.string.isRequired,
+};
 
 SrcsetImage.defaultProps = {
-  alt: ''
-}
+  alt: "",
+};
 
-module.exports = SrcsetImage
+module.exports = SrcsetImage;

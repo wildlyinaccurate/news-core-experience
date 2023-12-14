@@ -1,18 +1,19 @@
-const React = require('react')
+const React = require("react");
+const PropTypes = require("prop-types");
 
 class PromoSection extends React.Component {
-  render () {
+  render() {
     return (
       <a className="c-promo__section" href={this.props.url}>
         {this.props.name}
       </a>
-    )
+    );
   }
 }
 
 PromoSection.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  url: React.PropTypes.string.isRequired
-}
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 
-module.exports = PromoSection
+module.exports = PromoSection;

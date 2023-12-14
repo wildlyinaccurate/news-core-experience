@@ -1,12 +1,17 @@
 {
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "extends": ["standard", "plugin:react/recommended"],
-    "plugins": [
-        "standard",
-        "promise",
-        "react"
-    ]
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["standard", "promise", "react", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
